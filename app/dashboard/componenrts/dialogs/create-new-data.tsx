@@ -48,7 +48,7 @@ export default  function CreateNewData({
   };
 
   return (
-    <div className=" py-10">
+    <div className=" py-4">
       <Dialog open={open} onOpenChange={setOpen} >
         <DialogTrigger asChild>
           <Button>Add New Data</Button>
@@ -56,13 +56,16 @@ export default  function CreateNewData({
         <DialogContent>
           <DialogTitle> Add New Data</DialogTitle>
           <form onSubmit={handleSubmit}>
-            <Label>id</Label>
+            <div className="space-y-2">
+              <Label className="font-bold">Id</Label>
             <Input
               value={formData.id}
               onChange={(e) => {
                 setFormData({ ...formData, id: e.target.value });
               }}
             />
+            </div>
+            
             <Label>Name</Label>
             <Input
               value={formData.name}
